@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LigoninesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Gydymas">
+    <Key>
+      <PropertyRef Name="Gydymo_Nr" />
+    </Key>
+    <Property Name="Gydymo_Nr" Type="int" Nullable="false" />
+    <Property Name="Pradeta" Type="date" Nullable="false" />
+    <Property Name="Baigta" Type="date" />
+    <Property Name="Skirti_Vaistai" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GydytojoAK" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="PacientoAK" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="Diagnoze" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gydytojas">
+    <Key>
+      <PropertyRef Name="AK" />
+    </Key>
+    <Property Name="AK" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="Vardas" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pavarde" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Kvalifikacija" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Atlyginimas" Type="money" Nullable="false" />
+    <Property Name="Ligonine" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Ligonine">
+    <Key>
+      <PropertyRef Name="Pavadinimas" />
+    </Key>
+    <Property Name="Pavadinimas" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Adresas" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Biudzetas" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pacientas">
+    <Key>
+      <PropertyRef Name="AK" />
+    </Key>
+    <Property Name="AK" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="Vardas" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pavarde" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gimimo_Metai" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Gydymas_Gydytojas">
+    <End Role="Gydytojas" Type="Self.Gydytojas" Multiplicity="1" />
+    <End Role="Gydymas" Type="Self.Gydymas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gydytojas">
+        <PropertyRef Name="AK" />
+      </Principal>
+      <Dependent Role="Gydymas">
+        <PropertyRef Name="GydytojoAK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Gydymas_Pacientas">
+    <End Role="Pacientas" Type="Self.Pacientas" Multiplicity="1" />
+    <End Role="Gydymas" Type="Self.Gydymas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pacientas">
+        <PropertyRef Name="AK" />
+      </Principal>
+      <Dependent Role="Gydymas">
+        <PropertyRef Name="PacientoAK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Gydytojas_Ligonine">
+    <End Role="Ligonine" Type="Self.Ligonine" Multiplicity="0..1" />
+    <End Role="Gydytojas" Type="Self.Gydytojas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ligonine">
+        <PropertyRef Name="Pavadinimas" />
+      </Principal>
+      <Dependent Role="Gydytojas">
+        <PropertyRef Name="Ligonine" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LigoninesDBModelStoreContainer">
+    <EntitySet Name="Gydymas" EntityType="Self.Gydymas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gydytojas" EntityType="Self.Gydytojas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ligonine" EntityType="Self.Ligonine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pacientas" EntityType="Self.Pacientas" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Gydymas_Gydytojas" Association="Self.FK_Gydymas_Gydytojas">
+      <End Role="Gydytojas" EntitySet="Gydytojas" />
+      <End Role="Gydymas" EntitySet="Gydymas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Gydymas_Pacientas" Association="Self.FK_Gydymas_Pacientas">
+      <End Role="Pacientas" EntitySet="Pacientas" />
+      <End Role="Gydymas" EntitySet="Gydymas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Gydytojas_Ligonine" Association="Self.FK_Gydytojas_Ligonine">
+      <End Role="Ligonine" EntitySet="Ligonine" />
+      <End Role="Gydytojas" EntitySet="Gydytojas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

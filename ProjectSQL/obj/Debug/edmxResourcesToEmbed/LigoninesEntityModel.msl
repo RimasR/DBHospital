@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LigoninesDBModelStoreContainer" CdmEntityContainer="LigoninesDBEntities">
+    <EntitySetMapping Name="Gydymas1">
+      <EntityTypeMapping TypeName="LigoninesDBModel.Gydymas">
+        <MappingFragment StoreEntitySet="Gydymas">
+          <ScalarProperty Name="Gydymo_Nr" ColumnName="Gydymo_Nr" />
+          <ScalarProperty Name="Pradeta" ColumnName="Pradeta" />
+          <ScalarProperty Name="Baigta" ColumnName="Baigta" />
+          <ScalarProperty Name="Skirti_Vaistai" ColumnName="Skirti_Vaistai" />
+          <ScalarProperty Name="GydytojoAK" ColumnName="GydytojoAK" />
+          <ScalarProperty Name="PacientoAK" ColumnName="PacientoAK" />
+          <ScalarProperty Name="Diagnoze" ColumnName="Diagnoze" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gydytojas1">
+      <EntityTypeMapping TypeName="LigoninesDBModel.Gydytojas">
+        <MappingFragment StoreEntitySet="Gydytojas">
+          <ScalarProperty Name="AK" ColumnName="AK" />
+          <ScalarProperty Name="Vardas" ColumnName="Vardas" />
+          <ScalarProperty Name="Pavarde" ColumnName="Pavarde" />
+          <ScalarProperty Name="Kvalifikacija" ColumnName="Kvalifikacija" />
+          <ScalarProperty Name="Atlyginimas" ColumnName="Atlyginimas" />
+          <ScalarProperty Name="Ligonine" ColumnName="Ligonine" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ligonines">
+      <EntityTypeMapping TypeName="LigoninesDBModel.Ligonine">
+        <MappingFragment StoreEntitySet="Ligonine">
+          <ScalarProperty Name="Pavadinimas" ColumnName="Pavadinimas" />
+          <ScalarProperty Name="Adresas" ColumnName="Adresas" />
+          <ScalarProperty Name="Biudzetas" ColumnName="Biudzetas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pacientas1">
+      <EntityTypeMapping TypeName="LigoninesDBModel.Pacientas">
+        <MappingFragment StoreEntitySet="Pacientas">
+          <ScalarProperty Name="AK" ColumnName="AK" />
+          <ScalarProperty Name="Vardas" ColumnName="Vardas" />
+          <ScalarProperty Name="Pavarde" ColumnName="Pavarde" />
+          <ScalarProperty Name="Gimimo_Metai" ColumnName="Gimimo_Metai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

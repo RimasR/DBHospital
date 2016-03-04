@@ -1,0 +1,10 @@
+C:\Users\rimuk\Source\Repos\ProjectSQL\ProjectSQL\bin\Debug\ProjectSQL.exe.config
+C:\Users\rimuk\Source\Repos\ProjectSQL\ProjectSQL\bin\Debug\ProjectSQL.exe
+C:\Users\rimuk\Source\Repos\ProjectSQL\ProjectSQL\bin\Debug\ProjectSQL.pdb
+C:\Users\rimuk\Source\Repos\ProjectSQL\ProjectSQL\bin\Debug\EntityFramework.dll
+C:\Users\rimuk\Source\Repos\ProjectSQL\ProjectSQL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rimuk\Source\Repos\ProjectSQL\ProjectSQL\bin\Debug\EntityFramework.xml
+C:\Users\rimuk\Source\Repos\ProjectSQL\ProjectSQL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rimuk\Source\Repos\ProjectSQL\ProjectSQL\obj\Debug\ProjectSQL.csprojResolveAssemblyReference.cache
+C:\Users\rimuk\Source\Repos\ProjectSQL\ProjectSQL\obj\Debug\ProjectSQL.exe
+C:\Users\rimuk\Source\Repos\ProjectSQL\ProjectSQL\obj\Debug\ProjectSQL.pdb
